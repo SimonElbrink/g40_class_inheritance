@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class Manager extends Employee{
 
-    double bonus;
+    private double bonus;
 
     public Manager(String firstName, String lastName, LocalDate birthDate, double salary, LocalDate hiredDate, double bonus) {
         super(firstName, lastName, birthDate, salary, hiredDate);

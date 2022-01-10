@@ -1,6 +1,7 @@
 package se.lexicon;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 
 public class Student extends Person{
 
@@ -27,5 +28,12 @@ public class Student extends Person{
     @Override
     public String getDescription() {
         return toString();
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "courses=" + Arrays.toString(courses) +
+                "} " + super.toString();
     }
 }

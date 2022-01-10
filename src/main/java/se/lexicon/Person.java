@@ -2,6 +2,7 @@ package se.lexicon;
 
 import java.time.LocalDate;
 
+// Extending Object is not actually needed.
 public abstract class Person extends Object {
 
     private String firstName;
@@ -10,8 +11,9 @@ public abstract class Person extends Object {
 
     public abstract String getDescription();
 
-    //Always for creating
+    //Constructor criteria need to be matched in order to instantiate object
     public Person(String firstName, String lastName, LocalDate birthDate) {
+        super(); // This is calling the constructor of the parent. (Object)
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthDate = birthDate;
