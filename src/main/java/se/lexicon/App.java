@@ -14,9 +14,8 @@ public class App
 {
     public static void main( String[] args )
     {
-       Employee staff1 = new Employee("Simon", "Elbrink",LocalDate.of(1960,3,18), 10000, LocalDate.now(), Role.DEVELOPER);
+       Employee staff1 = new Employee("Simon", "Elbrink",LocalDate.of(1960,3,18), LocalDate.now(), Role.DEVELOPER);
        staff1.setFirstName("Simon");
-       staff1.setSalary(60000);
        staff1.setHiredDate(LocalDate.of(1997,3,18));
 
 
@@ -28,7 +27,7 @@ public class App
 
 
 
-       Employee boss1 = new Employee("Marcus", "Gudmundsen", LocalDate.MIN, 10000, LocalDate.now(), Role.CEO, Role.MANAGER, Role.HUMAN_RESOURCE);
+       Employee boss1 = new Employee("Marcus", "Gudmundsen", LocalDate.MIN, LocalDate.now(), Role.CEO, Role.MANAGER, Role.HUMAN_RESOURCE);
         System.out.println(boss1.getDescription());
         System.out.println(boss1.toString());
         System.out.println(boss1);
