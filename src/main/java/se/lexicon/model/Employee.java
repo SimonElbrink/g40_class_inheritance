@@ -1,22 +1,25 @@
-package se.lexicon;
+package se.lexicon.model;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 
 public class Employee extends Person {
 
    private double salary;
    private LocalDate hiredDate;
+   private Role[] roles;
 
 
-    public Employee(String firstName, String lastName, LocalDate birthDate, double salary, LocalDate hiredDate) {
+    public Employee(String firstName, String lastName, LocalDate birthDate, double salary, LocalDate hiredDate, Role ...roles) {
         super(firstName, lastName, birthDate);
         this.salary = salary;
         this.hiredDate = hiredDate;
+        this.roles = roles;
     }
 
     @Override
     public String getDescription(){
-        return "Employee with Name " + getFirstName() + " has a salary of " + getSalary() + " and was hired " + getHiredDate();
+        return "Employee with Name " + getFullName() + " has a salary of " + getSalary() + " and was hired " + getHiredDate();
     }
 
     public double getSalary() {
@@ -40,6 +43,7 @@ public class Employee extends Person {
         return "Employee{" +
                 "salary=" + salary +
                 ", hiredDate=" + hiredDate +
+                ", roles=" + Arrays.toString(roles) +
                 "} " + super.toString();
     }
 }
