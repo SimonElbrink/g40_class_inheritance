@@ -1,16 +1,16 @@
 package se.lexicon.model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Arrays;
 
-public class Employee extends Person {
+public class Employee extends Person implements Comparable<Employee>, Serializable {
 
     private static final double BASE_SALARY = 25_000;
 
    private double salary;
    private LocalDate hiredDate;
    private Role[] roles;
-
 
     public Employee(String firstName, String lastName, LocalDate birthDate, LocalDate hiredDate, Role ...roles) {
         super(firstName, lastName, birthDate);
@@ -36,6 +36,11 @@ public class Employee extends Person {
     @Override
     public String getDescription(){
         return "Employee with Name " + getFullName() + " has a salary of " + getSalary() + " and was hired " + getHiredDate();
+    }
+
+    @Override
+    public int compareTo(Employee o) {
+        return this.hiredDate.compareTo(o.hiredDate);
     }
 
     public double getSalary() {
